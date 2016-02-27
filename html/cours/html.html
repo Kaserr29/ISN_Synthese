@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ISN - Corentin LUCAS | Processing</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../../css/style1.css">
+		<link rel="icon" href="../img/FAV.png" type="image/gif" sizes="32x32"> 
+	</head>
+	<body>
+		<header>
+			<div>
+				<h1>ISN - Corentin LUCAS</h1>
+				<span>Année 2015/2016</span>
+			</div>
+			<nav>
+				<ul id="menu">
+					<li><a href="index.html">ACCUEIL</a></li>
+					<li><a href="#">COURS</a>
+						<ul>
+							<li><a href="processing.html">Processing</a></li>
+							<li><a href="voca.html">Vocabulaire</a></li>
+							<li><a href="html.html">HTML5/CSS3</a></li>
+							<li><a href="adresse.html">Adresses</a></li>
+							<li><a href="arduino.html">Arduino</a></li>
+						</ul>
+					</li>
+					<li><a href="#">REALISATIONS</a>
+						<ul>
+							<li><a href="../realisations/tppro.html">TP Processing</a></li>
+							<li><a href="../realisations/pong.html">Pong</a></li>
+							<li><a href="../realisations/2048.html">2048</a></li>
+							<li><a href="../realisations/animation.html">Animation</a></li>
+							<li><a href="../realisations/site.html">Site HTML</a></li>
+							<li><a href="../realisations/tpardu.html">Arduino</a></li>
+						</ul>
+					</li>
+					<li><a href="#">A PROPOS</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section>
+			<div class="section">
+				<h2>HTML</h2>
+			</div>
+			<article>
+				<h3>Qu'est ce que c'est ?</h3>
+				<p>Le HTML (HyperText Markup Language) est un format de présentation de données permettant de créer des pages web pouvant être lues dans des navigateurs.</p>
+				<p>C'est un langage de description de données, et non un langage de programmation. Il est figé c'est-à-dire qu'une fois le document chargé dans le navigateur, il ne répond à aucune action de l'utilisateur sur le contenu de la page.</p>
+				<p>Ce langage est pourvu d'un système de balisage qui va permettre de structurer notre document. </p>
+			</article>
+
+			<hr>
+
+			<article>
+				<h3>Les Balises HTML</h3>
+				<p>Une balise HTML est un élément que l'on va ajouter au texte de départ pour dire au navigateur de quelle manière l'afficher. Elle n'est pas affichée telle quelle dans le navigateur, elle est interprétée par celui-ci. Elle est toujours délimitée par les signes &lt et &gt. </p>
+				<h4>Exemple :</h4>
+				<code>
+<pre>
+&lthtml&gt
+</pre>
+				</code>
+				<p>Une balise peut en plus comporter de zéro à plusieurs attributs. Les attributs sont des informations complémentaires qui la caractérisent. Ils se présentent sous la forme nomattribut="valeur".</p>
+				<h4>Exemple :</h4>
+				<code>
+<pre>
+&lthtml lang="fr"&gt
+</pre>
+				</code>
+				<p>Chaque balise ouverte doit être fermée, cependant il existe des exceptions. </p>
+				<ul>Il existe 2 type de balises :
+					<li>Les balises simples : Ce sont des balises qui sont dites "vides", c'est-à-dire qu'elles ne vont contenir aucune autre balise HTML. Ces balises n'ont pas besoin d'être fermées. </li>
+					<li>Les balises doubles : Les balises doubles sont dites ouvrantes/fermantes, c'est-à-dire qu'elles nécessitent deux balises, une ouvrante et une fermante dans lesquelles on va pouvoir mettre d'autres balises ou du texte. La balise fermante est identique à la balise ouvrante, à la différence qu'elle contient un "/" pour indiquer à quel endroit on la ferme. </li>
+				</ul>
+				<h4>Exemple :</h4>
+				<code>
+<pre>
+&ltp&gtBalise double&lt/p&gt
+
+&ltimg src="balise simple"&gt
+</pre>
+				</code>
+				<p>Il existe de nombreuses balises ayant chacune une utilitée différente, vous pouvez les retrouver dans des listes comme <a href="https://openclassrooms.com/courses/apprenez-a-creer-votre-site-web-avec-html5-et-css3/memento-des-balises-html">celle-ci</a>.</p>
+			</article>
+
+			<hr>
+
+			<article>
+				<h3>La structure de base</h3>
+				<p>La première ligne du document s'appelle le DOCTYPE. C'est une balise indispensable pour conserver la compatibilité du rendu de votre page sur les différents navigateurs modernes. </p>
+				<p>Après le DOCTYPE, vient la balise &lthtml&gt. Elle encadre l'ensemble des autres balises. </p>
+				<p>La balise &lthtml&gt contient deux grandes balises : &lthead&gt, qui va contenir tout l'en-tête de la page et &ltbody&gt qui va contenir tout le corps du document. Ces balises ne doivent apparaitre qu'une seule et unique fois dans la page</p>
+				<h4>Exemple :</h4>
+				<code>
+<pre>
+&lt!DOCTYPE html&gt
+&lthtml&gt
+&lthead&gt
+    &lttitle&gtTitre de la page&lt/title&gt
+    &ltmeta charset=utf-8"&gt
+&lt/head&gt
+&ltbody&gt
+ 
+&lt!-- Ici votre site --&gt
+ 
+&lt/body&gt
+&lt/html&gt
+</pre>
+				</code>
+			</article>
+
+			<hr>
+
+			<article>
+				<h3>Les commentaires</h3>
+				<p>Les commentaires permettent de laisser des informations ou des descriptions du code et sont utilisables à n'importe quel endroit de votre document. Cependant, ce ne sont pas ces commentaires-là qu'il faudra utiliser pour les langages JavaScript et CSS qui possèdent leur propre système de commentaires. Ces commentaires ne seront pas affichés dans le navigateur mais ils resteront présents dans le code source.</p>
+				<p>Ils sont délimités par &lt!-- et --&gt et peuvent être multilignes. </p>
+				<h4>Exemple :</h4>
+				<code>
+<pre>
+&lt!-- Voici un premier commentaire sur une ligne. --&gt
+ 
+&lt!-- Voici un deuxième commentaire.
+     Celui-ci est multilignes. --&gt
+</pre>
+				</code>
+			</article>
+		</section>
+		<footer>
+			<span>Site HTML5 & CSS3 réalisé par Corentin Lucas</span>
+		</footer>
+	</body>
+</html>
