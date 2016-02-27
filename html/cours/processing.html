@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ISN - Corentin LUCAS | Processing</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../../css/style1.css">
+		<link rel="icon" href="../img/FAV.png" type="image/gif" sizes="32x32"> 
+	</head>
+	<body>
+		<header>
+			<div>
+				<h1>ISN - Corentin LUCAS</h1>
+				<span>Année 2015/2016</span>
+			</div>
+			<nav>
+				<ul id="menu">
+					<li><a href="index.html">ACCUEIL</a></li>
+					<li><a href="#">COURS</a>
+						<ul>
+							<li><a href="processing.html">Processing</a></li>
+							<li><a href="voca.html">Vocabulaire</a></li>
+							<li><a href="html.html.html">HTML5/CSS3</a></li>
+							<li><a href="adresse.html">Adresses</a></li>
+							<li><a href="arduino.html">Arduino</a></li>
+						</ul>
+					</li>
+					<li><a href="#">REALISATIONS</a>
+						<ul>
+							<li><a href="../realisations/tppro.html">TP Processing</a></li>
+							<li><a href="../realisations/pong.html">Pong</a></li>
+							<li><a href="../realisations/2048.html">2048</a></li>
+							<li><a href="../realisations/animation.html">Animation</a></li>
+							<li><a href="../realisations/site.html">Site HTML</a></li>
+							<li><a href="../realisations/tpardu.html">Arduino</a></li>
+						</ul>
+					</li>
+					<li><a href="#">A PROPOS</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section>
+			<div class="section">
+				<h2>Processing</h2>
+			</div>
+			<article>
+				<h3>Introduction</h3>
+				<p>Processing, anciennement appelé Pro55ing, est à la fois une bibliothèque Java et un environnement de développement, c’est à dire qu’il s’agit d’une version “simplifiée” de Java accompagnée d’un éditeur de texte et d’autres outils facilitant la programmation.</p>
+				<p>Ses créateurs : Benjamin Fry et Casey Reas, deux artistes américains, l’on conçu comme un outil d’apprentissage, libre et gratuit. Le logiciel est en effet simple d’utilisation et très diversifié dans ses applications : dessin 2D, 3D, son, vidéo … permettant aux débutants comme aux initiés de laisser libre cours à leurs créativités.</p>
+			</article>
+			<hr>
+			<article>
+				<h3>Structure de base d'un programme</h3>
+				<p>En général, la structure de base d’un programme ce compose de 3 parties. Dans un premier temps, on déclare les variables dont on aura besoin dans le programme : elles seront des des variables dites globales. On utilise ensuite la fonction <code>Setup()</code>, dont tout le code contenu à l’intérieur de celle ci ne s'exécutera qu’une seule fois, au lancement du programme. Puis on utilise la fonction <code>Draw()</code>, qui exécutée 30 fois par seconde (valeur modifiable via la fonction <code>framerate(int)).</code></p>
+				<p>Il faut également savoir que chaque instruction est séparée d’un point virgule <code>“;”</code> afin d’indiquer la fin d’une instruction à l’ordinateur et qu’il faut entourer les les blocs de code d’accolades <code>“{ }”</code>.</p>
+				<p>On peut également clarifier son code en y rajoutant des commentaires : la ligne précédée de  <code>//</code> ou tout les texte contenue entre <code>/*</code> et <code>*/</code> sera ignoré lors de l’execution du code.</p>
+
+				<h4>Exemple :</h4>
+				<code>
+<pre>
+// Je suis ignoré !
+/*
+Moi aussi
+*/
+		
+int variableGlobale = 0;
+			
+void setup() {
+	println("Je ne m’exécute qu’une fois");
+}
+		
+void draw() {
+	println("Je m’exécute 30 fois par seconde");
+	println(variableGlobale);
+	variableGlobale++;
+}
+</pre>
+				</code>
+			</article>
+			<hr>
+			<article>
+				<h3>Les Variables et tableaux</h3>
+				<p>Les variables permettent, en programmation de stocker des valeurs et effectuer des opérations sur celles-ci. Elles sont définies par :</p>
+				<ul>
+					<li>Un type, permet de préciser le type de valeur contenue dans la variables :
+						<ul>
+							<li><code>int</code> : nombre entier de -2 147 483 647 à 2 147 483</li>
+							<li><code>float</code> : nombre décimal de -3,40282347*10^38 à -3,40282347*10^38 avec un précision limité</li>
+							<li><code>double</code> : nombre décimal de -3,40282347*10^38 à  3,40282347*10^38 avec un plus grande précision que le float</li>
+							<li><code>boolean</code> : variable pouvant avoir seulement 2 états : true (vrai) ou false (faux)</li>
+							<li><code>char</code> : un seul caractère</li>
+							<li><code>String</code> chaine de caractères</li>
+						</ul>
+					</li>
+					<li>Un nom, défini par le développeur (à condition que le nom ne soit pas déjà utilisé pour une autre variable) il permet d'appeler la valeur de la variable</li>
+					<li>Une valeur, sur laquelle on pourra effectuer plusieurs opérations (surtout arithmétique pour les variables nombre)</li>
+				</ul>
+
+				<h4>Exemple :</h4>
+				<code>
+<pre>
+int nbrEntier = 10;
+int autreNbrEntier;
+float nbrDecimal = 1.2;
+char lettreA = ‘a’, lettreB = ‘b’;
+
+void setup() {
+	autreNbrEntier = nbrEntier*2;
+	nbrEntier = autreNbrEntier/2 + 3;
+	nbrDecimal = autreNbrEntier-nbrDecimal;
+	lettreA = lettreB;
+}
+</pre>
+				</code>
+
+				<p>Il faut faire attention puisqu’il existe des variables prédéfinies en Processing (il ne faut donc pas réutiliser ces noms) comme par exemple <code>width</code> et <code>height</code> qui renvoie les dimensions de la fenêtre ou encore <code>mouseX</code> et <code>mouseY</code> qui renvoient les coordonnés de la souris.</p>
+				<p>Il existe également un type de variable très utile : le tableau. Elle permet de stocker plusieurs variables d’un même type sous forme de tableau à une ou plusieurs dimension, on accède donc aux valeurs via son ou ses indices dont le premier est 0. Il existe également des opérations que l’on peut directement effectuer sur ces tableaux.</p>
+
+				<h4>Exemple :</h4>
+				<code>
+<pre>
+int [] tableauNbrEntier = {0,4,5,1,2}; // tableau d’entier à 1 dimension
+char [][] tableauDeCaractere = {{a,b},{a,g,j}}; // tableau de caractères à 2 dimensions
+char lettre;
+int nombre;
+					
+void setup() {
+	nombre = tableauNbrEntier[2];
+	tableauNbrEntier[1] = 5;
+	lettre = tableauDeCaractere[0][1];
+	tableauDeCaractere[1][3] = ‘z’;
+	tableauDeCaractere = reverse(tableauDeCaractere);
+}
+</pre>
+				</code>
+			</article>
+			<hr>
+			<article>
+				<h3>Les Conditions et Boucles</h3>
+				<p>La condition est un élément essentiel en programmation puisqu'il permet de n'effectuer une partie du code que si certaines conditions sont remplies. Pour ce faire, nous utilisons le mot clée if suivi de ladite condition entre parenthèses (il est possible d'utiliser plusieurs conditions en utilisant des opérateurs booléens), suivie du bloc de code que nous souhaitons exécuter si la condition est remplie. Il est également possible d'utiliser le mot clé <code>else</code> (impérativement placé apres un <code>if</code>) afin d’exécuter un bloc de code si la condition n'a pas été remplie. Il existe également un autre type de condition : le <code>switch case</code>, dont l'utilisation est moins rependue.</p>
+
+				<h4>Exemple :</h4>
+				<code>
+<pre>
+boolean test = true ;
+int nombre = 6 ;
+void setup() {
+if(test == true) {
+	println(« test est vrai ! ») ;
+}
+else {
+	println(« test est faux ! ») ;
+}
+if(nombre ≥ 6 && test!= false) {
+println(« nombre est supérieur ou égal à 6 et test différent de faux ») ;
+}
+</pre>
+				</code>
+
+				<p>Les boucles sont des éléments essentiels pour coder efficacement : elle permettent d'automatiser les tâches répétitives et donc de rendre plus clair notre code. Il existe plusieurs type de boucle : le <code>while(*condition*)</code> suivi de sa condition entre parenthèse puis du bloc de code a exécuter en boucle tant que la condition est vérifiée. Le <code>for(*initialisation* ;*condition*;incrémentation*)</code> permet d’exécuter un bloc de code tant que la variable locale associée à la boucle vérifiera une condition sachant qu'elle pourra être modifiée à chaque tours de boucle.</p>
+
+				<h4>Exemple :</h4>
+				<code>
+<pre>
+int test = 10 ;
+void Setup() {
+	While(test >= 5) {
+		for(int i = 0 ; i > 5 ; i++) {
+			println(« Je suis dans le for à la valeur i =  » + i) ;
+			test – ;
+		}
+		println(« Je suis dans le while car test ≥ 5 ») ;
+		test – ;
+	}
+}
+</pre>
+				</code>
+			</article>
+			<hr>
+			<article>
+				<h3>Les Fonctions</h3>
+				<p>La fonction permet d'isoler un bloc de code et d’appeler ce celui ci à n'importe quel moment, autant de fois que l'on le souhaite. Elle est définie par 3 éléments :</p>
+				<ul>
+					<li>Un type : <code>void</code> si elle ne retourne aucune valeur ou un type de variable pour retourner une variable du même type avec l'instruction <code>return *variable*</code></li>
+					<li>Un nom : défini par l'utilisateur à condition que celui-ci ne soit pas déjà utilisé, il permettra d’appeler la fonctionAttention, certains nom sont déjà occupé de base sur Processing tel que <code>Size()</code> pour régler la taille de la fenêtre ou <code>rect()</code> pour tracer des rectangles.</li>
+					<li>(Optionnel) Des paramètres :  ce sont des variables qui pourront intéragir avec le bloc de code afin de rendre la fonction plus polivalente.</li>
+				</ul>
+
+				<h4>Exemple :</h4>
+				<code>
+<pre>
+void Setup(){
+	affiche(« Bonjour ») ;
+}
+void affiche(String t) {
+	println(t) ;
+}
+</pre>
+				</code>
+			</article>
+
+			<article>
+				<h3>Conclusion</h3>
+				<p>Nous n'avons vu ici, qu'une petite partie de ce qu'il est possible de faire avec processing et il existe de nombreuses ressources en ligne dont particuliairement la référence qui liste et explque (en anglais) toutes les instruction de processing. De plus d'autres languages (le javascript, le java ou le C) utilisent un syntaxe relativement proche de celle du Processing, il peut donc âtre un bon point de départ à la découverte du monde la programmation !</p>
+			</article>
+		</section>
+		<footer>
+			<span>Site HTML5 & CSS3 réalisé par Corentin Lucas</span>
+		</footer>
+	</body>
+</html>
