@@ -40,11 +40,12 @@
 		</header>
 		<section>
 			<div class="section">
-				<h2>HTML</h2>
+				<h2>HTML5 & CSS3</h2>
 			</div>
 			<article>
-				<h3>Qu'est ce que c'est ?</h3>
+				<h3>Le HTML,qu'est ce que c'est ?</h3>
 				<p>Le HTML (HyperText Markup Language) est un format de présentation de données permettant de créer des pages web pouvant être lues dans des navigateurs.</p>
+				<p>En 1991, Tim Berners-Lee met au point ce language pour mettre en forme un document, le logiciel qui permet de lire ce fichier et de l'afficher (le navigateur ou browser en anglais) ainsi que le protocole qui permet le transfert des informations. Nous utilisons aujourd'hui le HTML5.</p>
 				<p>C'est un langage de description de données, et non un langage de programmation. Il est figé c'est-à-dire qu'une fois le document chargé dans le navigateur, il ne répond à aucune action de l'utilisateur sur le contenu de la page.</p>
 				<p>Ce langage est pourvu d'un système de balisage qui va permettre de structurer notre document. </p>
 			</article>
@@ -124,6 +125,70 @@
      Celui-ci est multilignes. --&gt
 </pre>
 				</code>
+			</article>
+			<hr>
+			<article>
+				<h3>Le CSS, qu'est ce que c'est ?</h3>
+				<p>Vous aurez surement remarqué qu'une page uniquement réalisée en HTML est un peu "simple", le texte s'affiche en noir sur blanc de manière très sobre. Heureusement il existe un moyen d'embellir (ou pas) la mise en page du site en y appliquant des styles.</p>
+				<p>Le CSS (pour Cascading Style Sheet) est une méthode très efficace pour les appliquer au HTML. Il existe 3 façons de procéder :</p>
+				<ul>
+					<li>Dans le corps du code HTML;</li>
+					<li>Dans l'en-tête de la page;
+					<li>Dans une feuille de style séparée du code HTML (méthode conseillée)</li>
+				</ul>
+				<p>Le CSS a été introduit au milieu des années 1990, CSS devient couramment utilisé dans la conception de sites web et bien pris en charge par les navigateurs web dans les années 2000. Nous utilisons aujourd'hui le CSS3</p>
+			</article>
+			<hr>
+			<article>
+				<h3>Utilisation d'une feuille de style</h3>
+				<p>Cette méthode compte de nombreux avantages : elle permet à plsuieur pages HTML de n'utiliser qu'une seule feuille de style ou de pouvoir définir plusieurs styles différent sur une seule page HTML e nfonction des besoins, ce qui permet de réduire la taille des fichiers et faciliter les mises à jour.</p>
+				<p>Pour inclure une feuille de style dans une page HTML on fait appel à la balise <code>&ltlink href="mes-styles.css" rel="stylesheet" type="text/css" /&gt</code> on indiquera dans le href le chemin pour accéder à la feuille de style.</p>
+			</article>
+			<hr>
+			<article>
+				<h3>La syntaxe du CSS3</h3>
+				<p>Quelques règles suffisent pour pouvoir séparer le contenu et sa présentation. L'essentiel est de comprendre comment établir le lien entre un style et la phrase à laquelle s'applique le style. Ce mécanisme est heureusement assez simple. </p>
+				<p>Avec les CSS, vous pouvez changer la présentation de toutes les balises (X)HTML standards. La syntaxe de présente de cette façon :</p>
+				<ul>
+					<li>Préciser le nom de la balise en premier : c'est le sélecteur</li>
+					<li>Encadrer les propriétés par des accolades { } ;</li>
+					<li>Placer un point virgule ; derrière chaque propriété. </li> 
+				</ul>
+				<h4>Exemple :</h4>
+				<p>Dans le fichier style.css :</p>
+				<code>
+<pre>
+p{
+	color: blue;
+	font-weight: bold;
+}
+</pre>
+				</code>
+				<p>Dans le fichier HTML</p>
+				<code>
+<pre>
+	&lt!DOCTYPE html&gt
+	&lthtml&gt
+	&lthead&gt
+		&lttitle&gtTest&lt/title&gt
+		&ltlink rel="stylesheet" type="text/css" href="style.css"&gt
+	&lt/head&gt
+	&ltbody&gt
+		&ltp&gtJe suis stylisé par la feuille de style&lt/p&gt
+		&ltp&gtMoi aussi !&lt/p&gt
+		&ltspan&gtMais pas moi&lt/span&gt
+	&lt/body&gt
+	&lt/html&gt
+</pre>
+				</code>
+				<p>Dans cet exemple, tous le texte contenu dans les balise &ltp&gt auront une couleur bleu et seront en gras.</p>
+				<p>Il existe bien sûr de nombreuses autres propriétés pour modifier le HTML que vous pouvez retrouver <a href="http://www.css-faciles.com/proprietes-css-liste-alphabetique.php">ici</a>, il existe égalment de nombreux autres sélecteur dont une liste est disponible <a href="https://developer.mozilla.org/fr/docs/Web/CSS/Reference/S%C3%A9lecteurs_d'attribut">ici</a>.</p>
+			</article>
+			<hr>
+			<article>
+				<h3>Conclusion</h3>
+				<p>Cette page n'est qu'un apperçu de ce qu'il est possible de réaliser avec le HTML et le CSS. Ces languages sont en constente évolution avec l'ajout de plus en plus de fonctionnalité (support des terminaux mobiles, drag and drop ...) car c'est une technologie essentielle au fonctionnement du web !</p>
+				<p>Il est également possible d'améliorer l'expérience du visiteur en utilisant le Javascript qui permet d'animer les pages web. A l'aide de ces 3 trois technologie, les possibilités sont inifnies !</p>
 			</article>
 		</section>
 		<footer>
