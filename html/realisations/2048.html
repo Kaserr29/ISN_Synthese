@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ISN - Corentin LUCAS | 2048</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../../css/style1.css">
+		<link rel="icon" href="../img/FAV.png" type="image/gif" sizes="32x32"> 
+	</head>
+	<body>
+		<header>
+			<div>
+				<h1>ISN - Corentin LUCAS</h1>
+				<span>Année 2015/2016</span>
+			</div>
+			<nav>
+				<ul id="menu">
+					<li><a href="../../index.html">ACCUEIL</a></li>
+					<li><a href="#">COURS</a>
+						<ul>
+							<li><a href="../cours/processing.html">Processing</a></li>
+							<li><a href="../cours/voca.html">Vocabulaire</a></li>
+							<li><a href="../cours/html.html">HTML5/CSS3</a></li>
+							<li><a href="../cours/adresse.html">Adresses</a></li>
+							<li><a href="../cours/arduino.html">Arduino</a></li>
+						</ul>
+					</li>
+					<li><a href="#">REALISATIONS</a>
+						<ul>
+							<li><a href="tppro.html">TP Processing</a></li>
+							<li><a href="pong.html">Pong</a></li>
+							<li><a href="2048.html">2048</a></li>
+							<li><a href="animation.html">Animation</a></li>
+							<li><a href="site.html">Site HTML</a></li>
+							<li><a href="tpardu.html">Arduino</a></li>
+						</ul>
+					</li>
+					<li><a href="#">A PROPOS</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section>
+			<div class="section">
+				<h2>Le Pong</h2>
+			</div>
+			<article>
+				<h3>Consigne</h3>
+				<p>Ce projet sera à réaliser en groupe ( un élève de chaque établissement).</p>
+				<p>Il s'agit de réaliser un 2048. Votre jeu doit comporter au minimum 3 écrans différents :</p>
+				<ul>
+					<li>Un écran d'accueil avec au moins un bouton permettant de lancer le jeu ;</li>
+					<li>Un écran de jeu</li>
+					<li>Un écran avec affichage du score de la partie et du meilleur score jamais réalisé.</li>
+				</ul>
+				<h4>Règles du 2048</h4>
+				<p>Le but du jeu est de fusionner des nombres ensemble (puissances de 2) afin d'atteindre le nombre ultime '2048' et gagner la partie !</p>
+				<p>L'aire du jeu 2048 est une grille de 4 lignes par 4 colonnes avec donc 16 cellules carrées. Chaque cellule peut être vide ou contenir un nombre. Au début du jeu, il y a deux carrés (également appelés « briques ») avec un chiffre '2' à l'intérieur.</p>
+				<p>Lorsque vous parvenez à faire entrer en collision 2 briques avec le même numéro dedans, elles fusionnent en une seule nouvelle brique dont le numéro sera l'addition des deux nombres précédents : 2+2=4, 4+4=8, ... 1024+1024=2048 !</p>
+				<p>Pour déplacer les briques sur la grille, vous devez juste choisir une direction (haut, droite, bas ou gauche). Toutes les briques vont se déplacer dans la direction choisie, jusqu'à ce qu'elles fusionnent avec une brique de même valeur ou bien qu'elles soient bloquées par une brique avec un numéro différent.</p>
+				<p>Sur un ordinateur de bureau, utilisez simplement les 4 flèches directionnelles du clavier pour déplacer les briques.</p>
+			</article>
+			<hr>
+			<article>
+				<h3>Investissment Personnel</h3>
+				<p>La particularité de ce projet, en plus d'être basé sur les tableau et le fait qu'il est un projet de groupes imposés. Les projets de groupes sont souvent relativement compliqué à gérer et particulièrement en programmation où chacun pense et code différemment : nom des variables en Anglais ou en Français ou même la syntaxe du code plus généralement. Il faut donc s'organiser, se créer des « conventions » afin que même si le code n'est pas écrit par la même personne il conserve une forme d'unité.</p>
+				<p>Dans un premier temps, nous avons réfléchis sur la partie "théorique" du projet : créer un algorithme décrivant les principes du jeu. Pour ce faire, notre réflexion à commencé sur papier : définir les règles et essayer de les comprendre. Nous avons ensuite commencé à expériementer sur processing pour appliquer nos algorithmes à des tableaux, jusqu'à réussir à obtenir un code fonctionnel qui avait alors pour seul interface graphique des nombres qui s'affichaient dans la console. Par exemple, pour réaliser les décalages des chiffres sur les axes verticaux, nous nous sommes servis des mêmes fonctions que pour les décalages horizontaux sauf que l'on inverse préalablement les absoces et les ordonnées du tableau</p>
+				<h4>Exemple : Fonction pour décaler le tableau vers la droite</h4>
+				<code>
+<pre>
+int[][] stackRight(int[][] line) {
+   for ( int k = 0; k < line.length; k++) {
+      for ( int i = 0; i < line[k].length; i++ ) {
+         if ( line[k][i] == 0) {
+            for ( int j = i; j &gt= 0; j-- ) {
+               if ( line[k][j] &gt 0 ) {
+                  line[k][i] = line[k][j];
+                  line[k][j] = 0;
+                  i--;
+                  B++;
+               }
+            }
+         }
+      }
+   }
+   return line;
+}
+</pre>
+				</code>
+				<p>Dans un second temps nous sommes consacrés à la mise en place d'un vraie interface graphique : une grille ou les chiffres peuvent se déplacer. Nous avons également ajouté une couleur propre à chaque chiffre qui est générée automatiquement. Cette a été relativement simple puisqu'elle se base en grande partie sur les fontions précédement créées. Et finalement nous avons ajouté un système de détection de victoire (obtenir un 2048) et de défaite (toute les cases pleines). La détection de victoire était plutôt simple : il suffisait de parcourir le tableau et cherche un 2048, alors que la défaite a necessité plus de réflexion puisqu'il fallait prendre en compte que toutes les cases soient pleines et qu'il n'y ai plus aucun mouvement possible.</p>
+				<h4>Exemple : Fonction détection de défaite</h4>
+				<code>
+<pre>
+boolean testGameOver (int[][] tableau) {
+   //On teste l'existence de cases vides
+   for ( int k = 0; k &lt tableau.length; k++) {
+      for ( int i = 0; i &lt tableau[k].length; i++ ) {
+         if ( tableau[k][i] == 0 ) return false;
+      }
+   }
+
+
+   //S'il n'y en a pas on teste si des additions sont possibles
+   boolean addPossible = false;
+
+   //À la verticale
+   for ( int k = 1; k < tableau.length - 1 && addPossible == false; k++) {
+      for ( int i = 0; i < tableau[k].length; i++ ) {
+         if ( tableau[k-1][i] == tableau[k][i] ) addPossible = true;
+         if ( tableau[k+1][i] == tableau[k][i] ) addPossible = true;
+      }
+   }
+   //À l'horizontale
+   for ( int k = 0; k < tableau.length && addPossible == false; k++) {
+      for ( int i = 1; i < tableau[k].length - 1; i++ ) {
+         if ( tableau[k][i-1] == tableau[k][i] ) addPossible = true;
+         if ( tableau[k][i+1] == tableau[k][i] ) addPossible = true;
+      }
+   }
+
+   if ( !addPossible ) return true;
+   else return false;
+}
+</pre>
+				</code>
+			</article>
+			<hr>
+			<article>
+				<h3>Ressentis</h3>
+				<p>Ce projet n'a pas été complété jusuq'au bout : en effet nous n'avaons tous les écrans demandés dans la consigne puisque d'autre projet d'ISN ont pris le dessus. Toutefois, le jeu est totalement jouable avec une interface graphique.</p>
+				<p>Une des parties les plus complexes dans ce projet en plus de devoir effectuer des opérations parfois complexes sur des tableaux, est le travail en groupe. Il faut s'assurer que tout le monde soit au courant des avancés du groupe : il aurait fallu donc que nous soyons un peu plus assidus sur le journal de bord du projet où nous pourrions y détailler ce qui a été fait et comment et ce qu'il reste à faire ou modifier. Il aurait pu être intéressant également de fractionner les tâches : une personne s'occupe de la partie graphique, une autre de la partie arithmétique …</p>
+				<p>Malgré tout, ce projet fut très instructif et agréable, grâce à la bonne ambiance dans le groupe, j'ai pu entrevoir quelles sont les difficultés rencontrés lors du travail en groupe et comment les surpasser. J'espère pouvoir utiliser cette expérience pour mes futurs projet comme celui de fin fin d'année d'ISN ou celui de SI</p>
+			</article>
+			<hr>
+			<article>
+				<h3>Annexe</h3>
+				<h4>Télécharger le code</h4>
+				<p>/!\Necessite une connexion internet, l'archive est hébergée sur Toutatice /!\</p>
+				<a href="www.toutatice.fr/moodle-0290007A/pluginfile.php/22722/mod_forum/attachment/941/2048%20-%202.0.zip" target="_blank"> <input type="button" value="Télécharger"></a>
+			</article>
+		</section>
+		<footer>
+			<span>Site HTML5 & CSS3 réalisé par Corentin Lucas</span>
+		</footer>
+	</body>
+</html>
