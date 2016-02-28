@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ISN - Corentin LUCAS | Adresse</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../../css/style1.css">
+		<link rel="icon" href="../img/FAV.png" type="image/gif" sizes="32x32"> 
+	</head>
+	<body>
+		<header>
+			<div>
+				<h1>ISN - Corentin LUCAS</h1>
+				<span>Année 2015/2016</span>
+			</div>
+			<nav>
+				<ul id="menu">
+					<li><a href="../../index.html">ACCUEIL</a></li>
+					<li><a href="#">COURS</a>
+						<ul>
+							<li><a href="processing.html">Processing</a></li>
+							<li><a href="voca.html">Vocabulaire</a></li>
+							<li><a href="html.html">HTML5/CSS3</a></li>
+							<li><a href="adresse.html">Adresses</a></li>
+							<li><a href="arduino.html">Arduino</a></li>
+						</ul>
+					</li>
+					<li><a href="#">REALISATIONS</a>
+						<ul>
+							<li><a href="../realisations/tppro.html">TP Processing</a></li>
+							<li><a href="../realisations/pong.html">Pong</a></li>
+							<li><a href="../realisations/2048.html">2048</a></li>
+							<li><a href="../realisations/animation.html">Animation</a></li>
+							<li><a href="../realisations/site.html">Site HTML</a></li>
+							<li><a href="../realisations/tpardu.html">Arduino</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<section>
+			<div class="section">
+				<h2>Adresse absolue VS adresse relative</h2>
+			</div>
+			<article>
+				<h3>L'Adresse en informatique</h3>
+				<p>En informatique, lorsque le parle d'adresse d'un fichier, on désigne l'emplacement dans la mémoire où est stocké le fichier. Il s'agit en quelque sorte du chemin a emprunter pour pouvoir y accèder. On peut avoir besoin de cette adresse dans de nombreuses situations, particulièrement en programmation , par exemple dans un fiCchier HTML pour y inclure une feuille de style.</p>
+				<p>Il existe 2 type d'adresse.</p>
+			</article>
+			<hr>
+			<article>
+				<h3>Adresse relative</h3>
+				<p>C'est une méthode qui est particulièrement utilisé en interne, par exemple en HTML. Elle consiste à se déplacer dans une arboressence de fichier par une suite d'instructions, un itinéraire, à partir d'un point de départ défini, tout comme un GPS pourrait vous guider sur les routes.</p>
+				<h4>Exemple :</h4>
+				<p>Considérons l'arborescence suivante : </p>
+				<code>
+<pre>
+racine
+	|-- index.html
+	|-- javascript
+	|-- images
+	|	|-- chat
+	|	|	|-- chat_trop_mignon.jpg
+	|	|-- chien_rigolo.jpg
+	|-- style
+	|	|-- style.css	
+	|-- pages
+	|	|-- les_chiens.html
+	|	|-- les_chats.html
+</pre>
+				</code>
+				<p>Si je veux intégrer l'image chien_rigolo.jpg dans ma page les_chiens.html, je dois utiliser l'adresse relative suivante</p>
+				<code>
+<pre>
+	../images/chien_rigolo.jpg
+</pre>
+				</code>
+				<p>Cette adresse se décompose de la façon suivante : </p>
+				<ul>
+					<li>On est dans le dossier pages avec le fichier les_chiens.html</li>
+					<li>On recule d'un élément dans l'arborescence avec le "../", on est donc dans la racine</li>
+					<li>On entre dans le dossier images avec "/images"</li>
+					<li>On sélectionne l'image chien_rigolo.html avec "chien_rigolo.html"</li>
+				</ul>
+				<p>Le chemin relatif est donc un moyen efficace de se déplacer dans une arborescence, à condition de <b>connaitre le point de départ</b>.</p>
+			</article>
+			<hr>
+			<article>
+				<h3>Adresse absolue</h3>
+				<p>Le chemin absolu, contrairement à une adresse relative n'a pas besoin de point départ défini puisque que l'on partira toujours de la racine de l'arborescence, un peu comme votre adresse réelle. Il faut donc indiquer tout le chemin à parcourir depuis la racine jusqu'au fichier.</p>
+				<p>Cette méthode s'utilise en externe : l'adresse d'un site internet, comme "https://fr.wikipedia.org/wiki/World_Wide_Web" est une adresse absolue.</p>
+				<h4>Exemple :</h4>
+				<p>Considérons la même arborescence :</p>
+				<code>
+<pre>
+racine
+	|-- index.html
+	|-- javascript
+	|-- images
+	|	|-- chat
+	|	|	|-- chat_trop_mignon.jpg
+	|	|-- chien_rigolo.jpg
+	|-- style
+	|	|-- style.css	
+	|-- pages
+	|	|-- les_chiens.html
+	|	|-- les_chats.html
+</pre>
+				</code>
+				<p>Si l'on veut accéder à l'image chat_trop_mignon.jpg on utilisera l'adresse absolue suivante :</p>
+				<code>
+<pre>
+	racine/images/chat_trop_migion.jpg
+</pre>
+				</code>
+				<p>Ici, contrairement à une adresse relative, on ne fait que avancer dans l'arborescence, on ne peut pas reculer.</p>
+				<p>Le chemin absolu est un moyen efficace pour accéder à une arborescence sans connaitre son point de départ.</p>
+			</article>
+		</section>
+		<footer>
+			<span>Site HTML5 & CSS3 réalisé par Corentin Lucas</span>
+		</footer>
+	</body>
+</html>
