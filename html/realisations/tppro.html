@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ISN - Corentin LUCAS | TP Processing</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../../css/style1.css">
+		<link rel="icon" href="../img/FAV.png" type="image/gif" sizes="32x32"> 
+	</head>
+	<body>
+		<header>
+			<div>
+				<h1>ISN - Corentin LUCAS</h1>
+				<span>Année 2015/2016</span>
+			</div>
+			<nav>
+				<ul id="menu">
+					<li><a href="../../index.html">ACCUEIL</a></li>
+					<li><a href="#">COURS</a>
+						<ul>
+							<li><a href="../cours/processing.html">Processing</a></li>
+							<li><a href="../cours/voca.html">Vocabulaire</a></li>
+							<li><a href="../cours/html.html">HTML5/CSS3</a></li>
+							<li><a href="../cours/adresse.html">Adresses</a></li>
+							<li><a href="../cours/arduino.html">Arduino</a></li>
+						</ul>
+					</li>
+					<li><a href="#">REALISATIONS</a>
+						<ul>
+							<li><a href="tppro.html">TP Processing</a></li>
+							<li><a href="pong.html">Pong</a></li>
+							<li><a href="2048.html">2048</a></li>
+							<li><a href="animation.html">Animation</a></li>
+							<li><a href="site.html">Site HTML</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<section>
+			<div class="section">
+				<h2>Les TP Processing</h2>
+			</div>
+			<article>
+				<h3>Les boucles</h3>
+				<p>Ce premier TP sur processing était orienté sur les boucles. Nous devions créer des motifs répétifs entirement crées par des boucles. Cela a permis de mettre en avant l'utilisation des différents formats de boucles que l'on retrouve sur Processing dont le <code>while</code> et surtout le <code>for</code>, mais aussi la possibilité d'imbriquer des boucles.</p>
+				<p>Ce tp m'a permis de maitriser à la fois l'utilisation des boucles mais aussi celle des instructions pour dessiner des formes géométriques.</p>
+				<h4>Exemple :</h4>
+				<p>Un des motif à reproduire en utilisant des boucles</p>
+				<img src="../../img/realisations/tppro/exemple.png" class="solo">
+			</article>
+			<hr>
+				<article>
+				<h3>Les tableaux</h3>
+				<p>L'objetif de ce Tp est la maitrise des tableaux en Processing. En effet il s'agit d'un élément très important en programmation car il permet une flexibilité dans le stockage et traitement des variables. Ainsi nous avons pu effectuer diverses opérations sur des tableaux, comme accéder à certains éléments ou le trier avec des exemples comme un annuaire téléphonque qui combinait différent types de tableaux.
+				Nous avons pu également nous familiariser avec les tableaux à plusieurs dimensions, qui sont extrèmement utiles, avec la programmation d'un système de création de groupes d'élèves.</p>
+				<p>Grâce à ce TP j'ai pu apprendre à maitriser les tableaux et les manipuler, ce qui est quelque chose que je n'avais jamais fait et que je me retrouve à utiliser très souvent maintenant.</p>
+				<h4>Exemple :</h4>
+				<p>obtenir le groupe d'un élève</p>
+				<code>
+<pre>
+String [][] groupe = {{"Jérôme", "Valérian"}
+    , {"Nathan", "Maëlis"}
+    , {"Clémence", "Nicolas", "Louis"}
+    , {"Jules", "Nicolas"}
+    , {"Anaelle", "Mathilde", "Catherine"}
+    , {"Mathieu"}
+    , {"Claire", "Vincent"}
+    , {"Erwan", "Antoine"}
+    , {"Axel", "Paul"}
+    , {"François"}};
+
+
+void setup() {
+    getGroupe("Nicolas");
+}
+
+void draw() {
+}
+
+void getGroupe(String name) {
+    int g[] = {}; 
+
+    for (int i = 0; i &lt groupe.length; i++) {
+        for (int j = 0; j &lt groupe[i].length; j++) {
+            if (groupe[i][j].equals(name)) {
+                g = append(g, i);
+            }
+        }
+    }
+    if (g.length == 0) {
+        println(name + " n'appartient à aucun groupe");
+    } else {
+        println(name + " appartient au(x) groupe(s) : ");
+        for (int i = 0; i &lt g.length; i++) {
+            println(" - groupe " + (g[i]+1));
+        }
+    }
+}
+</pre>
+				</code>
+			</article>
+			<hr>
+			<article>
+				<h3>Le traitement de l'image</h3>
+				<p>Ce dernier TP était centré sur le traitement d'une image : c'est à dire modifier une image en changeant ces couleurs, son contraste, sa luminosité ... Pour cela nous avons d'abord appris à réccupérer les pixels d'une image avec la fonction <code>loadPixels()</code> et de les mofier un par un pour créer différents dégradés. Nous avons ensuite pu appliquer ce procédé à une image de tournesol pour y appliquer différents effets comme par exemple le négatif ou noir et blanc. Ce TP combianit les deux précédents TP puisqu'il necessitait l'utilisation à la fois de boucles et de tableaux (les pixels sont présentés sous la forme d'un tableau à une seule dimension).</p>
+				<p>Bien que je trouve que la gestion des images ne soit pas très efficace en Processing, il s'agissait d'un TP plus compplexe que les précédents mais qui permet de comprendre le fonctionnement de certains effet que les logiciels de traitement d'image peuvent réaliser.</p>
+				<h4>Exemple :</h4>
+				<p>L'image d'origine, avec un effet négatif et un effet noir et blanc</p>
+				<img src="../../img/realisations/tppro/1.jpg">
+				<img src="../../img/realisations/tppro/2.jpg">
+				<img src="../../img/realisations/tppro/3.jpg">
+			</article>
+			<hr>
+			<article>
+				<h3>Annexe</h3>
+				<h4>Télécharger le TP Tableaux</h4>
+				<p>/!\Necessite une connexion internet, l'archive est hébergée sur Google Drive/!\</p>
+				<a href="https://drive.google.com/file/d/0B87-wHPZsjH-aFZsZzc3RkNnZDg/view?usp=sharing" target="_blank"> <input type="button" value="Télécharger"></a>
+				<h4>Télécharger le TP Traitement image</h4>
+				<p>/!\Necessite une connexion internet, l'archive est hébergée sur Google Drive/!\</p>
+				<a href="https://drive.google.com/file/d/0B87-wHPZsjH-bk5sWDFsQk1qazg/view?usp=sharing" target="_blank"> <input type="button" value="Télécharger"></a>
+			</article>
+			</article>
+		</section>
+		<footer>
+			<span>Site HTML5 & CSS3 réalisé par Corentin Lucas</span>
+		</footer>
+	</body>
+</html>

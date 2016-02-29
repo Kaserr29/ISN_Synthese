@@ -139,6 +139,7 @@ table
 td, th /* Mettre une bordure sur les td ET les th */
 {
     border: 1px solid black;
+    padding: 5px;
 }
 pre{
 	border: 5px solid #24476c;
