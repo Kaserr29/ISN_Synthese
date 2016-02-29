@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ISN - Corentin LUCAS | Animation</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../../css/style1.css">
+		<link rel="icon" href="../img/FAV.png" type="image/gif" sizes="32x32"> 
+	</head>
+	<body>
+		<header>
+			<div>
+				<h1>ISN - Corentin LUCAS</h1>
+				<span>Année 2015/2016</span>
+			</div>
+			<nav>
+				<ul id="menu">
+					<li><a href="../../index.html">ACCUEIL</a></li>
+					<li><a href="#">COURS</a>
+						<ul>
+							<li><a href="../cours/processing.html">Processing</a></li>
+							<li><a href="../cours/voca.html">Vocabulaire</a></li>
+							<li><a href="../cours/html.html">HTML5/CSS3</a></li>
+							<li><a href="../cours/adresse.html">Adresses</a></li>
+							<li><a href="../cours/arduino.html">Arduino</a></li>
+						</ul>
+					</li>
+					<li><a href="#">REALISATIONS</a>
+						<ul>
+							<li><a href="tppro.html">TP Processing</a></li>
+							<li><a href="pong.html">Pong</a></li>
+							<li><a href="2048.html">2048</a></li>
+							<li><a href="animation.html">Animation</a></li>
+							<li><a href="site.html">Site HTML</a></li>
+							<li><a href="tpardu.html">Arduino</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<section>
+			<div class="section">
+				<h2>Animation</h2>
+			</div>
+			<article>
+				<h3>Consigne</h3>
+				<p>Afin d'apprendre à créer des animations sur Processing qui pourraient être utilisées dans des jeux vidéos en 2D. Ce TP a pour but de créer un programme où faire se déplacer de gauche à droite le personnage d'Astérix ainsi que le faire sauter, en utilisant un sprite.</p>
+				<img src="../../img/realisations/animation/1.png" class="solo">
+			</article>
+			<hr>
+			<article>
+				<h3>Investissement personnel</h3>
+				<p>Le sprite est une seule image composée de plusieurs images de personnage ou d'élément du décor. On doit alors "découper" le sprite en plusieurs petites images,à l'aide d'un logiciel de traitement d'images et les utiliser quand il est nécessaire. Ces images sont en .png car ce format, est d'abord adapté à ce type d'images, mais il permet surtout de pouvoir utiliser un fond transparent au lieu d'un fond plein.</p>
+				<img src="../../img/realisations/animation/asterix.gif" class="solo" id="small">
+				<p>Les déplacements devaient être contrôllés par les flèches directionnelles du clavier, pour cela j'ai utilisé une fonction très efficace qui permet de récuppérer la touche appuyée (keyPressed) ou relachée(keyReleased) dans un tableau : </p>
+				<code>
+<pre>
+// détection touche pressée
+void keyPressed() {
+  keyboard[keyCode] = true;
+  //39 --> droite
+  //37 --> gauche
+  //38 --> haut
+}
+
+// détection touche relachée
+void keyReleased() {
+  keyboard[keyCode] = false;
+}
+</pre>
+				</code>
+				<p>Les déplacements en eux mêmes sont ensuite assez faciles à réaliser puisqu'il suffit d'incrémenter ou décrémenter la position horizontale de l'image représentant le personnage. Pour un meilleur rendu lors des déplacement nous faisons défiler différentes images du personnages à différent moment de se marche créant ainsi l'effet qu'il marche. Pour cela on met toutes les images dans un tableau et affichera l'image à un indice différent du tableau à chaque mise à jour de l'écran (27 fois par seconde dans ce programme). Afin d'économiser la taille des fichiers pour faire marcher le personnage dans un sens ou l'autre, on utilise un effet mirroir en donnant à l'image une taille négative : <code>scale(-1,1)</code></p>
+				<p>J'y ai également créé la possibilité de faire sauter le personnage, ce qui est assez semblable aux déplacements. Toutefois pour donner un aspect plus réaliste au jeu il a fallu bloquer la possibilitée de déplacement une fois en l'air, à l'aide une variable booléenne, permettant de savoir si le personnage est en l'air ou pas.</p>
+			</article>
+			<hr>
+			<article>
+				<h3>Ressentis</h3>
+				<p>J'ai trouvé ce TP très intéressant parce qu'il permet de découvrir les mécanismes derrière le fonctionnement de certains jeux vidéos. Toutefois il permet aussi de rendre compte à quel point il est difficile de gérer des timings sur Processing puisque la fonction qui fait une pause dans le programme :<code>delay()</code>ne permet pas d'executer d'autre code en même temps, il faut donc utiliser le système de raffraichissement ingénieusement pour réaliser ces animations.</p>
+				<p>J'aurais aimé avoir le temps de rajouter une animation à l'aide sprite pour le saut afin de lrendre plus réaliste et trouver les "bonnes" valeur qui le rendrait plus naturel. Et même rajouter d'autres animations pour rendre le tout plus vivant et fonctionnel.</p>
+			</article>
+			<hr>
+			<article>
+				<h3>Annexe</h3>
+				<h4>Télécharger le code</h4>
+				<p>/!\Necessite une connexion internet, l'archive est hébergée sur Google Drive/!\</p>
+				<a href="https://drive.google.com/file/d/0B87-wHPZsjH-SFp0MTRrc0t6WU0/view?usp=sharing" target="_blank"> <input type="button" value="Télécharger"></a>
+			</article>
+		</section>
+		<footer>
+			<span>Site HTML5 & CSS3 réalisé par Corentin Lucas</span>
+		</footer>
+	</body>
+</html>

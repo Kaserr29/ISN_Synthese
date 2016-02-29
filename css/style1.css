@@ -97,14 +97,14 @@ h2 {
 }
 h3 {
 	display: inline-block;
-	margin: 10px 0;
-	padding: 0;
+	margin: 0px;
+	padding-bottom: 20px;
 	font-size: 30px;
 	color: #24476c;
 	text-indent: 1em;
 }
 h4{
-	margin-bottom: 0px;
+	margin: 0px;
     font-size: 22px;
 	text-shadow: 1px 1px #0b151f;
 	color: #7b7b7b;
@@ -144,6 +144,19 @@ pre{
 	border: 5px solid #24476c;
 	padding: 5px;
 	box-shadow:  0px 5px 5px #0b151f;
+}
+img{
+	width: 33%;
+	height: 33%;
+}
+.solo{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#small{
+	width: 102px;
+	height: 132px;
 }
 
 /* --- FOOTER --- */
